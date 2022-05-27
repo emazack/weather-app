@@ -1,8 +1,13 @@
+import Header from './Header';
+import Main from './Main';
+import Footer from './Footer';
 
 function App() {
   return (
-    <div>
-      ciao
+    <div className='page-wrapper'>
+        <Header/>
+        <Main/>
+        <Footer/>
     </div>
   );
 }
