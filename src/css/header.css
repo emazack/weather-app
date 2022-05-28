@@ -1,0 +1,84 @@
+.search-weather{
+    color: #fff;
+    height: 200px;
+}
+
+.search-weather .wrapper { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    height: 100%;
+    
+}
+
+.search-container{
+    background: #fff;
+    height: 50px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.8s;
+    width: fit-content;
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+    -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
+
+.search-container:hover > .search-input{
+    width: 400px;
+}
+
+.search-container .search-input{
+    background: transparent;
+    border: none;
+    outline:none;
+    width: 0px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.8s;
+    
+}
+
+.search-container .search-btn path{
+    color: #fff;
+}
+
+.search-container .search-btn {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    background-color: #303030;
+    cursor:pointer;
+}
+
+.search-weather .wrapper .favourite-box { 
+    justify-self: end;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.search-weather .wrapper .favourite-box .add-to-favourite { 
+    margin-bottom: 22px;
+}
+
+.search-weather .wrapper .favourite-box .add-to-favourite:hover { 
+    color: #303030;
+    cursor: pointer;
+}
+
+
+.search-weather .wrapper .favourite-box .favourite .star-icon { 
+    
+}
+
+.search-weather .wrapper .favourite-box .favourite div { 
+    
+}

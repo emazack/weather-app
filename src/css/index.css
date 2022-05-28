@@ -5,7 +5,37 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.page-container{
+  position: relative;
+}
+
+.opacity-layer {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: -1;
+}
+
+
+
+.page-container .bg-image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+}
+
+.wrapper{
+  max-width: 1110px;
+  margin: 0 auto;
 }

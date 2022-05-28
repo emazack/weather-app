@@ -1,8 +1,22 @@
-function Footer() {
+import '../css/index.css';
+import '../css/footer.css';
+
+function Footer({weatherData}) {
     return (
-        <div>
-            Footer
-        </div>
+        <section className="detail-weather">
+            <div className="wrapper">
+                <div className="next-days-container">
+                    <div className="day-weather">
+                        <div className="day">
+                            Domani
+                        </div>
+                        <div className="weather">
+                            Piovoso
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     );
   }
   
