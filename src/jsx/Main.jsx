@@ -1,25 +1,52 @@
+import React, { useEffect, useState} from 'react';
+
+
 import '../css/index.css';
 import '../css/main.css';
 
-function Main({weatherData}) {
+import iconSun from '../assets/icons/icon-sun.svg'
+import iconRain from '../assets/icons/icon-rain.svg'
+import iconCloudy from '../assets/icons/icon-cloudly.svg'
+import iconCloud from '../assets/icons/icon-cloud.svg'
+import iconTempest from '../assets/icons/icon-tempest.svg'
 
+function Main({weatherData, weatherCodeList}) {
+
+
+    const [currentData, setCurrentData] = useState([]);
+
+    useEffect( () => {
+        getCurrentWeatherData();
+    }, [weatherData]);
+
+    function getCurrentWeatherData() {
+        let weatherCode = weatherData.current_weather.weathercode;
+        weatherCodeList.forEach(element => {
+            if (weatherCode === element.id) {
+                setCurrentData(element);
+            }
+        });
+    }
+
+    console.log("result");
+    console.log(currentData);
 
     return (
-        <section className="current-weather-section">
-            <div className="wrapper">
-                <div className="upper-text">
-                    <div className="icon">
+        <section class="current-weather-section">
+            <div class="wrapper">
+                <div class="upper-text">
+                    <div class="icon">
 
                     </div>
-                    <div className="text">
+                    <div class="text">
                         In questo momento è
                     </div>
                 </div>
 
-                <div className="weather-text">
+                <div class="weather-text">
                     Piovoso
                 </div>
-                <div className="place-text">
+                <div class="place-text">
                     a Bergamo, IT
                 </div>
             </div>

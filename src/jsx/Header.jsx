@@ -6,39 +6,13 @@ import arrow from '../assets/icons/icon-arrow-right.svg';
 
 function Header({weatherData, setWeatherData}) {
 
-    let url = "https://api.open-meteo.com/v1/forecast?latitude=41.89193&longitude=12.51133&daily=weathercode&current_weather=true&timezone=Europe%2FBerlin";
-    let long = "";
-    let lat = "";
-
-    useEffect( () => {
-        getWeather();
-    }, []);
-
-    //presentare la temperatura corrente
-    //presentare il tempo corrente
-    //presentare la velocità del vento corrente
-    //presentare l'orario di registrazione
-
-    function getUserPosition() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((position) => {
-                long = position.coords.longitude;
-                lat = position.coords.latitude;
-                url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&daily=weathercode&current_weather=true&timezone=Europe%2FBerlin`;
-            });
-        }
-    }
-    
-    async function getWeather() {
-        const response = await fetch(url);
-        const data = await response.json();
-        setWeatherData(await data);
-    }
+    // let url = "https://api.open-meteo.com/v1/forecast?latitude=41.89193&longitude=12.51133&daily=weathercode&current_weather=true&timezone=Europe%2FBerlin";
+    // let long = "";
+    // let lat = "";
     
     async function getCoordinates() {
         const response = await fetch('https://geocoding-api.open-meteo.com/v1/search?name=Napoli&language=it&count=1');
         const data = await response.json();
-        console.log(data);
     }
     
     
@@ -53,13 +27,13 @@ function Header({weatherData, setWeatherData}) {
                 </div>
                 <div class='favourite-box'>
                     <div class='add-to-favourite'>
-                        Aggiungi preferito
+                        AGGIUNGI
                     </div>
                     <div class='favourite'>
                         <div class='star-icon'>
-                            
+                            x
                         </div>
-                        <div class=''>
+                        <div class='city'>
                             Bergamo
                         </div>
                     </div>

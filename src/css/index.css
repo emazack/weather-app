@@ -24,8 +24,6 @@ body {
   z-index: -1;
 }
 
-
-
 .page-container .bg-image{
   position: absolute;
   top: 0;
@@ -33,9 +31,12 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: -2;
+  object-fit: cover;
+  object-position: bottom;
 }
 
 .wrapper{
   max-width: 1110px;
   margin: 0 auto;
+  padding: 0 20px;
 }
