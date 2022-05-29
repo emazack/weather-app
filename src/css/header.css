@@ -37,7 +37,7 @@
 @media (max-width: 1024px) {
     .search-weather .wrapper .search-container { 
         justify-self: center;
-        margin-bottom: 25px;
+        margin: 25px 0;
     }
 }
 
@@ -87,6 +87,7 @@ input.search-input:focus
     font-size: 20px;
     line-height: 28px;
     transition: 0.8s;
+    position: relative;
 }
 
 @media (max-width: 1024px) {
@@ -109,6 +110,7 @@ input.search-input:focus
 .search-weather .wrapper .favourite-box .favourite {
     display: flex;
     justify-content: end;
+    position: absolute;
 }
 
 
@@ -116,6 +118,7 @@ input.search-input:focus
     width: 24px;
     height: 24px;
     margin-right: 11px;
+    display: flex;
 }
 
 .search-weather .wrapper .favourite-box .favourite .city { 

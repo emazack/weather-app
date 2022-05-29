@@ -10,13 +10,13 @@ import iconTempest from '../assets/icons/icon-tempest.svg'
 function Footer({weatherData, weatherCodeList}) {
 
     const weeksDay = [
+        'Domenica',
         'Lunedì',
         'Martedì',
         'Mercoledì',
         'Giovedì',
         'Venerdì',
-        'Sabato',
-        'Domenica'
+        'Sabato'
     ]
 
     const getTextFromCode = (code) => {

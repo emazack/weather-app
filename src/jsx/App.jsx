@@ -41,9 +41,11 @@ function App() {
   ];
 
   const [weatherData, setWeatherData] = useState({});
+  const [favouriteWeatherData, setFavouriteWeatherData] = useState({});
   const [lat, setLat] = useState('45.69601');
   const [long, setLong] = useState('9.66721');
   const [place, setPlace] = useState('Bergamo');
+  const [favouritePlace, setFavouritePlace] = useState('');
   const [urlForecast, setUrlForecast] = useState('');
   const [currentData, setCurrentData] = useState([]);
 
@@ -86,22 +88,27 @@ function App() {
         <img class='bg-image' data-active={currentData.bg === 'cloud' ? "active" : 'not-active'} src={bgImageCloud} alt="meteo nuvole" />
         <div class='opacity-layer'></div>
         <Header 
-        weatherData={weatherData} 
-        setWeatherData={setWeatherData}
-        lat={lat}
-        long={long}
-        setLat={setLat}
-        setLong={setLong}
-        place={place}
-        setPlace={setPlace}
+          weatherData={weatherData} 
+          setWeatherData={setWeatherData}
+          setLat={setLat}
+          setLong={setLong}
+          place={place}
+          setPlace={setPlace}
+          setFavouriteWeatherData={setFavouriteWeatherData}
+          favouriteWeatherData={favouriteWeatherData}
+          favouritePlace={favouritePlace}
+          setFavouritePlace={setFavouritePlace}
         />
         <Main 
-        weatherData={weatherData} 
-        weatherCodeList={weatherCodeList}
-        currentData={currentData}
-        place={place}
+          weatherData={weatherData} 
+          weatherCodeList={weatherCodeList}
+          currentData={currentData}
+          place={place}
         />
-        <Footer weatherData={weatherData} weatherCodeList={weatherCodeList}/>
+        <Footer 
+          weatherData={weatherData} 
+          weatherCodeList={weatherCodeList}
+        />
     </div>
   );
 }

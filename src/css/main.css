@@ -36,7 +36,7 @@
 .current-weather-section .wrapper .weather-text { 
     font-style: normal;
     font-weight: 700;
-    font-size: clamp(50px, calc(3.125rem + ((1vw - 3.75px) * 9.7087)), 200px);
+    font-size: clamp(80px, calc(5rem + ((1vw - 3.75px) * 7.767)), 200px);
     line-height: 100%;
     margin-bottom: 25px;
 }
