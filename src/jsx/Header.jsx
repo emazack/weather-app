@@ -7,9 +7,6 @@ import arrow from '../assets/icons/icon-arrow-right.svg';
 
 function Header({weatherData, setWeatherData, lat, long, setLat, setLong, place, setPlace}) {
 
-    // let url = "https://api.open-meteo.com/v1/forecast?latitude=41.89193&longitude=12.51133&daily=weathercode&current_weather=true&timezone=Europe%2FBerlin";
-    // let long = "";
-    // let lat = "";
     const [urlCoords, setUrlCoords] = useState('https://geocoding-api.open-meteo.com/v1/search?name=Bergamo&language=it&count=1');
 
     useEffect(() => {

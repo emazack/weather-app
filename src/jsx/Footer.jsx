@@ -9,6 +9,32 @@ import iconTempest from '../assets/icons/icon-tempest.svg'
 
 function Footer({weatherData, weatherCodeList}) {
 
+    const weeksDay = [
+        'Lunedì',
+        'Martedì',
+        'Mercoledì',
+        'Giovedì',
+        'Venerdì',
+        'Sabato',
+        'Domenica'
+    ]
+
+    const getTextFromCode = (code) => {
+        let resultText = '';
+        weatherCodeList.forEach(element => {
+            if (code === element.id) {
+                resultText = element.text;
+            }
+        });
+        return resultText;
+    }
+
+    const getNameDay = (stringDate) => {
+        const currentDate = new Date(stringDate);
+        let numberDate =  currentDate.getDay();
+        return weeksDay[numberDate];
+    }
+
     console.log(weatherData);
     return (
         <section class="detail-weather">
@@ -19,31 +45,31 @@ function Footer({weatherData, weatherCodeList}) {
                             Domani
                         </div>
                         <div class="weather">
-                            Piovoso
+                            {getTextFromCode(weatherData.daily?.weathercode[1])}
                         </div>
                     </div>
                     <div class="day-weather">
                         <div class="day">
-                            Domani
+                            {getNameDay(weatherData.daily?.time[2])}
                         </div>
                         <div class="weather">
-                            Piovoso
+                        {getTextFromCode(weatherData.daily?.weathercode[2])}
                         </div>
                     </div>
                     <div class="day-weather">
                         <div class="day">
-                            Domani
+                        {getNameDay(weatherData.daily?.time[3])}
                         </div>
                         <div class="weather">
-                            Piovoso
+                        {getTextFromCode(weatherData.daily?.weathercode[3])}
                         </div>
                     </div>
                     <div class="day-weather">
                         <div class="day">
-                            Domani
+                        {getNameDay(weatherData.daily?.time[4])}
                         </div>
                         <div class="weather">
-                            Piovoso
+                        {getTextFromCode(weatherData.daily?.weathercode[4])}
                         </div>
                     </div>
                 </div>

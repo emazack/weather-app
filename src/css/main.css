@@ -1,6 +1,6 @@
 .current-weather-section { 
     color: #fff;
-    margin-bottom: 200px;
+    margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 3.75px) * 5.178)), 180px);
 }
 
 .current-weather-section .wrapper .upper-text {

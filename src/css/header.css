@@ -37,6 +37,7 @@
 @media (max-width: 1024px) {
     .search-weather .wrapper .search-container { 
         justify-self: center;
+        margin-bottom: 25px;
     }
 }
 
@@ -85,6 +86,7 @@ input.search-input:focus
     font-weight: 400;
     font-size: 20px;
     line-height: 28px;
+    transition: 0.8s;
 }
 
 @media (max-width: 1024px) {

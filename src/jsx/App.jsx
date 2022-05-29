@@ -23,7 +23,9 @@ function App() {
     {id: 0, text:"Sereno", bg: 'sun' , icon: iconSun},
     {id: 1, text:"Sereno", bg: 'sun' , icon: iconSun},
     {id: 2, text:"In parte Sereno", bg: 'sun' , icon: iconCloudy},
-    {id: 3, text:"Cielo Coperto", bg: 'cloud' , icon: iconCloud},
+    {id: 3, text:"Coperto", bg: 'cloud' , icon: iconCloud},
+    {id: 45, text:"Nuvoloso", bg: 'cloud', icon: iconCloud},
+    {id: 48, text:"Nuvoloso", bg: 'cloud' , icon: iconCloud},
     {id: 51, text:"Pioggia", bg: 'rain' , icon: iconRain},
     {id: 53, text:"Pioggia", bg: 'rain' , icon: iconRain},
     {id: 55, text:"Pioggia", bg: 'rain' , icon: iconRain},
@@ -33,8 +35,9 @@ function App() {
     {id: 80, text:"Pioggia", bg: 'rain' , icon: iconRain},
     {id: 81, text:"Temporale", bg: 'rain' , icon: iconTempest},
     {id: 82, text:"Temporale", bg: 'rain' , icon: iconTempest},
-    {id: 45, text:"Nuvoloso", bg: 'cloud', icon: iconCloud},
-    {id: 48, text:"Nuvoloso", bg: 'cloud' , icon: iconCloud},
+    {id: 95, text:"Temporale", bg: 'rain' , icon: iconTempest},
+    {id: 96, text:"Temporale", bg: 'rain' , icon: iconTempest},
+    {id: 99, text:"Temporale", bg: 'rain' , icon: iconTempest},
   ];
 
   const [weatherData, setWeatherData] = useState({});
