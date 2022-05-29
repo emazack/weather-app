@@ -1,0 +1,41 @@
+.detail-weather { 
+    height: 100%;
+    background: rgb(151,151,151);
+    background: linear-gradient(260deg, rgba(151,151,151,0.865983893557423) 100%, rgba(9,114,134,1) 100%);
+    backdrop-filter: blur(2px);
+}
+
+.detail-weather .wrapper { 
+    height: 100%;
+    width: 100%;
+    padding: clamp(20px, calc(1.25rem + ((1vw - 3.75px) * 3.4951)), 74px) 0;
+}
+
+.detail-weather .wrapper .next-days-container { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 40px;
+    
+}
+
+.detail-weather .wrapper .next-days-container .day-weather { 
+    
+}
+
+.detail-weather .wrapper .next-days-container .day-weather .day { 
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 187%;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #303030;
+}
+
+.detail-weather .wrapper .next-days-container .day-weather .weather { 
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    color: #303030;
+}

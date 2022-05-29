@@ -10,33 +10,15 @@ import iconCloudy from '../assets/icons/icon-cloudly.svg'
 import iconCloud from '../assets/icons/icon-cloud.svg'
 import iconTempest from '../assets/icons/icon-tempest.svg'
 
-function Main({weatherData, weatherCodeList}) {
+function Main({weatherData, weatherCodeList, currentData, place}) {
 
-
-    const [currentData, setCurrentData] = useState([]);
-
-    useEffect( () => {
-        getCurrentWeatherData();
-    }, [weatherData]);
-
-    function getCurrentWeatherData() {
-        let weatherCode = weatherData.current_weather.weathercode;
-        weatherCodeList.forEach(element => {
-            if (weatherCode === element.id) {
-                setCurrentData(element);
-            }
-        });
-    }
-
-    console.log("result");
-    console.log(currentData);
 
     return (
         <section class="current-weather-section">
             <div class="wrapper">
                 <div class="upper-text">
                     <div class="icon">
-
+                        <img src={currentData.icon} alt="weather type" />
                     </div>
                     <div class="text">
                         In questo momento è
@@ -44,10 +26,10 @@ function Main({weatherData, weatherCodeList}) {
                 </div>
 
                 <div class="weather-text">
-                    Piovoso
+                    {currentData.text}
                 </div>
                 <div class="place-text">
-                    a Bergamo, IT
+                    a {place}
                 </div>
             </div>
         </section>

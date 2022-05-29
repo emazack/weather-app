@@ -1,3 +1,51 @@
-.current-weather-section{
+.current-weather-section { 
     color: #fff;
+    margin-bottom: 200px;
+}
+
+.current-weather-section .wrapper .upper-text {
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(14px, calc(0.875rem + ((1vw - 3.75px) * 0.3883)), 20px);
+    line-height: 140%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 25px; 
+}
+
+.current-weather-section .wrapper .upper-text .icon { 
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.current-weather-section .wrapper .upper-text .icon img { 
+    
+}
+
+.current-weather-section .wrapper .upper-text .text { 
+    
+}
+
+.current-weather-section .wrapper .weather-text { 
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(50px, calc(3.125rem + ((1vw - 3.75px) * 9.7087)), 200px);
+    line-height: 100%;
+    margin-bottom: 25px;
+}
+
+.current-weather-section .wrapper .place-text { 
+    letter-spacing: 4.8px;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(16px, calc(1rem + ((1vw - 3.75px) * 0.5178)), 24px);
+    line-height: 117%;
 }

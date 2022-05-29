@@ -29,10 +29,21 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   z-index: -2;
   object-fit: cover;
   object-position: bottom;
+  opacity: 0;
+}
+
+.page-container .bg-image[data-active='active']{
+  opacity: 1;
+  transition:opacity 2s ease-in-out;
+}
+
+.page-container .bg-image[data-active='not-active']{
+  opacity: 0;
+  transition:opacity 2s ease-in-out;
 }
 
 .wrapper{

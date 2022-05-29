@@ -1,27 +1,44 @@
 import React, { useEffect, useState} from 'react';
+import axios from 'axios';
 
 import '../css/index.css';
 import '../css/header.css';
 import arrow from '../assets/icons/icon-arrow-right.svg';
 
-function Header({weatherData, setWeatherData}) {
+function Header({weatherData, setWeatherData, lat, long, setLat, setLong, place, setPlace}) {
 
     // let url = "https://api.open-meteo.com/v1/forecast?latitude=41.89193&longitude=12.51133&daily=weathercode&current_weather=true&timezone=Europe%2FBerlin";
     // let long = "";
     // let lat = "";
+    const [urlCoords, setUrlCoords] = useState('https://geocoding-api.open-meteo.com/v1/search?name=Bergamo&language=it&count=1');
+
+    useEffect(() => {
+        setUrlCoords(`https://geocoding-api.open-meteo.com/v1/search?name=${place}&language=it&count=1`)
+      }, [place]);
     
-    async function getCoordinates() {
-        const response = await fetch('https://geocoding-api.open-meteo.com/v1/search?name=Napoli&language=it&count=1');
-        const data = await response.json();
+    const getCoordinates = () => {
+        axios.get(urlCoords).then((response) => {
+            setLat(response.data.results[0].latitude);
+            setLong(response.data.results[0].longitude);
+          })
     }
-    
     
     return (
         <section class='search-weather'>
             <div class='wrapper'>
                 <div class="search-container">
-                    <input type="text" name="search" placeholder="Search..." class="search-input"/>
-                    <button type='submit' class="search-btn">
+                    <input 
+                    type="text" 
+                    name="search" 
+                    placeholder="Search..." 
+                    class="search-input"
+                    onChange={event => setPlace(event.target.value)}
+                    />
+                    <button 
+                    type='submit' 
+                    class="search-btn"
+                    onClick={getCoordinates}
+                    >
                         <img src={arrow} alt="arrow button" />
                     </button>
                 </div>
@@ -34,7 +51,7 @@ function Header({weatherData, setWeatherData}) {
                             x
                         </div>
                         <div class='city'>
-                            Bergamo
+                            {place}
                         </div>
                     </div>
                 </div>
