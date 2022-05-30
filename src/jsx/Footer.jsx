@@ -30,38 +30,38 @@ function Footer({weatherData, weatherCodeList, isError}) {
     }
     
     return (
-        <section class="detail-weather">
-            <div class="wrapper">
-                <div class="next-days-container">
-                    <div class="day-weather">
-                        <div class="day">
+        <section className="detail-weather">
+            <div className="wrapper">
+                <div className="next-days-container">
+                    <div className="day-weather">
+                        <div className="day">
                             Domani
                         </div>
-                        <div class="weather">
+                        <div className="weather">
                             {isError ? "-" : getTextFromCode(weatherData.daily?.weathercode[1])}
                         </div>
                     </div>
-                    <div class="day-weather">
-                        <div class="day">
+                    <div className="day-weather">
+                        <div className="day">
                             {getNameDay(weatherData.daily?.time[2])}
                         </div>
-                        <div class="weather">
+                        <div className="weather">
                         {isError ? "-" : getTextFromCode(weatherData.daily?.weathercode[2])}
                         </div>
                     </div>
-                    <div class="day-weather">
-                        <div class="day">
+                    <div className="day-weather">
+                        <div className="day">
                         {getNameDay(weatherData.daily?.time[3])}
                         </div>
-                        <div class="weather">
+                        <div className="weather">
                         {isError ? "-" : getTextFromCode(weatherData.daily?.weathercode[3])}
                         </div>
                     </div>
-                    <div class="day-weather">
-                        <div class="day">
+                    <div className="day-weather">
+                        <div className="day">
                         {getNameDay(weatherData.daily?.time[4])}
                         </div>
-                        <div class="weather">
+                        <div className="weather">
                         {isError ? "-" : getTextFromCode(weatherData.daily?.weathercode[4])}
                         </div>
                     </div>

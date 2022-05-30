@@ -99,18 +99,12 @@ function App() {
       }
     }, [weatherData]);
 
-    useEffect(() => {
-      
-    }, [urlForecast]);
-
-
-
   return (
     <div className='page-container'>
         <img className='bg-image' data-active={currentData.bg === 'sun' ? "active" : 'not-active'} src={bgImageSun} alt="meteo sole" />
-        <img class='bg-image' data-active={currentData.bg === 'rain' ? "active" : 'not-active'} src={bgImageRain} alt="meteo pioggia" />
-        <img class='bg-image' data-active={currentData.bg === 'cloud' ? "active" : 'not-active'} src={bgImageCloud} alt="meteo nuvole" />
-        <div class='opacity-layer'></div>
+        <img className='bg-image' data-active={currentData.bg === 'rain' ? "active" : 'not-active'} src={bgImageRain} alt="meteo pioggia" />
+        <img className='bg-image' data-active={currentData.bg === 'cloud' ? "active" : 'not-active'} src={bgImageCloud} alt="meteo nuvole" />
+        <div className='opacity-layer'></div>
         <Header 
           weatherData={weatherData} 
           setWeatherData={setWeatherData}
