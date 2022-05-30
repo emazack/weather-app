@@ -4,7 +4,7 @@ This is a Weather App made in React.
 
 ## Table of contents
 
-- [Overview](#overview)
+- [Make it works](#Make-it-works)
   - [The challenge](#the-challenge)
 - [My process](#my-process)
   - [Built with](#built-with)
