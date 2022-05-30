@@ -39,7 +39,7 @@ Users should be able to:
 
 ### Screenshot
 
-![https://imgur.com/a/us8QupN](./screenshot.jpg)
+![Screen](https://imgur.com/a/us8QupN)
 
 ## My process
 
