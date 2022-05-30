@@ -41,22 +41,42 @@ function App() {
   ];
 
   const [weatherData, setWeatherData] = useState({});
-  const [favouriteWeatherData, setFavouriteWeatherData] = useState({});
+  const [place, setPlace] = useState('Bergamo');
+  const [currentData, setCurrentData] = useState([]);
   const [lat, setLat] = useState('45.69601');
   const [long, setLong] = useState('9.66721');
-  const [place, setPlace] = useState('Bergamo');
-  const [favouritePlace, setFavouritePlace] = useState('');
   const [urlForecast, setUrlForecast] = useState('');
-  const [currentData, setCurrentData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [isFavourite, setIsFavourite] = useState(false);
+  const [favouriteWeatherData, setFavouriteWeatherData] = useState(() => {
+    const saved = localStorage.getItem("fweather");
+    const initialValue = JSON.parse(saved);
+    return initialValue || {};
+  });
+  const [favouritePlace, setFavouritePlace] = useState(() => {
+    const saved = localStorage.getItem("fplace");
+    const initialValue = JSON.parse(saved);
+    return initialValue || "";
+  });
 
   useEffect(() => {
-    const searchPlace = () => {
-      axios.get(urlForecast).then((response) => {
-        setWeatherData(response.data)
-      })
+    const searchPlace = async () => {
+      try {
+        setIsLoading(true);
+        const resp = await axios.get(urlForecast);
+        setTimeout(() => {          
+          setWeatherData(resp.data);
+          setIsLoading(false);
+        }, 1000);
+      } catch (error) {
+        setIsError(true);
+        console.log(error);
+      }
     }
     searchPlace();
   }, [urlForecast]);
+
 
   useEffect(() => {
       setUrlForecast(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&daily=weathercode&current_weather=true&timezone=Europe%2FBerlin`);
@@ -79,6 +99,10 @@ function App() {
       }
     }, [weatherData]);
 
+    useEffect(() => {
+      
+    }, [urlForecast]);
+
 
 
   return (
@@ -98,16 +122,23 @@ function App() {
           favouriteWeatherData={favouriteWeatherData}
           favouritePlace={favouritePlace}
           setFavouritePlace={setFavouritePlace}
+          setIsError={setIsError}
+          isError={isError}
+          isFavourite={isFavourite}
+          setIsFavourite={setIsFavourite}
         />
         <Main 
           weatherData={weatherData} 
           weatherCodeList={weatherCodeList}
           currentData={currentData}
           place={place}
+          isLoading={isLoading}
+          isError={isError}
         />
         <Footer 
           weatherData={weatherData} 
           weatherCodeList={weatherCodeList}
+          isError={isError}
         />
     </div>
   );

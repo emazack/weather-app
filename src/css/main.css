@@ -3,6 +3,16 @@
     margin-bottom: clamp(100px, calc(6.25rem + ((1vw - 3.75px) * 5.178)), 180px);
 }
 
+.current-weather-section[data-loading="false"] { 
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.current-weather-section[data-loading="true"] { 
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
 .current-weather-section .wrapper .upper-text {
     letter-spacing: 4px;
     text-transform: uppercase;

@@ -6,20 +6,37 @@ import '../css/header.css';
 import arrow from '../assets/icons/icon-arrow-right.svg';
 import star from '../assets/icons/icon-star.svg';
 
-function Header({weatherData, setWeatherData, setLat, setLong, place, setPlace, setFavouriteWeatherData, favouritePlace, setFavouritePlace, favouriteWeatherData}) {
+function Header({weatherData, setWeatherData, setLat, setLong, place, setPlace, setFavouriteWeatherData, favouritePlace, setFavouritePlace, favouriteWeatherData, isError, setIsError, isFavourite, setIsFavourite}) {
 
     const [urlCoords, setUrlCoords] = useState('https://geocoding-api.open-meteo.com/v1/search?name=Bergamo&language=it&count=1');
-    const [isFavourite, setIsFavourite] = useState(false);
 
     useEffect(() => {
         setUrlCoords(`https://geocoding-api.open-meteo.com/v1/search?name=${place}&language=it&count=1`)
-      }, [place]);
+    }, [place]);
+
+    useEffect(() => {
+        const saveLocalFavourite = () => {
+            localStorage.setItem("fplace", JSON.stringify(favouritePlace));
+            localStorage.setItem("fweather", JSON.stringify(favouriteWeatherData));
+        }
+        saveLocalFavourite();
+        if (favouritePlace !== '' && favouriteWeatherData !== {}) {
+            setIsFavourite(true); 
+        } else {
+            setIsFavourite(false); 
+        }
+    }, [favouritePlace, favouriteWeatherData, setIsFavourite]);
     
-    const getCoordinates = () => {
-        axios.get(urlCoords).then((response) => {
-            setLat(response.data.results[0].latitude);
-            setLong(response.data.results[0].longitude);
-          })
+    const getCoordinates = async () => {
+        try {    
+            const resp = await axios.get(urlCoords);        
+            setLat(resp.data.results[0].latitude);
+            setLong(resp.data.results[0].longitude);
+            setIsError(false)
+        } catch (error) {
+            setIsError(true)
+            console.log(error);
+        }
     }
 
     const addFavourite = () => {
@@ -39,37 +56,39 @@ function Header({weatherData, setWeatherData, setLat, setLong, place, setPlace, 
     }
     
     return (
-        <section class='search-weather'>
-            <div class='wrapper'>
-                <div class="search-container">
+        <section className='search-weather'>
+            <div className='wrapper'>
+                <div className="search-container" data-error={isError}>
                     <input 
                     type="text" 
                     name="search" 
-                    placeholder="Search..." 
-                    class="search-input"
+                    placeholder="Cerca..." 
+                    className="search-input"
                     onChange={event => setPlace(event.target.value)}
                     />
                     <button 
                     type='submit' 
-                    class="search-btn"
+                    className="search-btn"
                     onClick={getCoordinates}
                     >
                         <img src={arrow} alt="arrow button" />
                     </button>
                 </div>
-                <div class='favourite-box'>
-                    <div class='add-to-favourite'
-                        onClick={addFavourite}
-                    >
-                        {!isFavourite ? "AGGIUNGI" : "RIMUOVI"}
-                    </div>
+                <div className='favourite-box'>
+                    {isError ? null : (
+                        <div className='add-to-favourite'
+                            onClick={addFavourite}
+                        >
+                            {!isFavourite ? "AGGIUNGI" : "RIMUOVI"}
+                        </div>
+                    )}
                     { isFavourite ? (
-                        <div class='favourite'>
-                            <div class='star-icon'>
+                        <div className='favourite'>
+                            <div className='star-icon'>
                                 <img src={star} alt="star" />
                             </div>
                             <div 
-                                class='city'
+                                className='city'
                                 onClick={selectFavourite}
                             >
                                 {favouritePlace}

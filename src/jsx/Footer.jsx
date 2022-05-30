@@ -1,13 +1,7 @@
 import '../css/index.css';
 import '../css/footer.css';
 
-import iconSun from '../assets/icons/icon-sun.svg'
-import iconRain from '../assets/icons/icon-rain.svg'
-import iconCloudy from '../assets/icons/icon-cloudly.svg'
-import iconCloud from '../assets/icons/icon-cloud.svg'
-import iconTempest from '../assets/icons/icon-tempest.svg'
-
-function Footer({weatherData, weatherCodeList}) {
+function Footer({weatherData, weatherCodeList, isError}) {
 
     const weeksDay = [
         'Domenica',
@@ -34,8 +28,7 @@ function Footer({weatherData, weatherCodeList}) {
         let numberDate =  currentDate.getDay();
         return weeksDay[numberDate];
     }
-
-    console.log(weatherData);
+    
     return (
         <section class="detail-weather">
             <div class="wrapper">
@@ -45,7 +38,7 @@ function Footer({weatherData, weatherCodeList}) {
                             Domani
                         </div>
                         <div class="weather">
-                            {getTextFromCode(weatherData.daily?.weathercode[1])}
+                            {isError ? "-" : getTextFromCode(weatherData.daily?.weathercode[1])}
                         </div>
                     </div>
                     <div class="day-weather">
@@ -53,7 +46,7 @@ function Footer({weatherData, weatherCodeList}) {
                             {getNameDay(weatherData.daily?.time[2])}
                         </div>
                         <div class="weather">
-                        {getTextFromCode(weatherData.daily?.weathercode[2])}
+                        {isError ? "-" : getTextFromCode(weatherData.daily?.weathercode[2])}
                         </div>
                     </div>
                     <div class="day-weather">
@@ -61,7 +54,7 @@ function Footer({weatherData, weatherCodeList}) {
                         {getNameDay(weatherData.daily?.time[3])}
                         </div>
                         <div class="weather">
-                        {getTextFromCode(weatherData.daily?.weathercode[3])}
+                        {isError ? "-" : getTextFromCode(weatherData.daily?.weathercode[3])}
                         </div>
                     </div>
                     <div class="day-weather">
@@ -69,7 +62,7 @@ function Footer({weatherData, weatherCodeList}) {
                         {getNameDay(weatherData.daily?.time[4])}
                         </div>
                         <div class="weather">
-                        {getTextFromCode(weatherData.daily?.weathercode[4])}
+                        {isError ? "-" : getTextFromCode(weatherData.daily?.weathercode[4])}
                         </div>
                     </div>
                 </div>
