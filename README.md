@@ -6,7 +6,6 @@ This is a Weather App made in React.
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -37,10 +36,6 @@ Users should be able to:
 - Check the favourite place also after the refresh of the page
 - Navigate the page in mobile and tablet
 
-### Screenshot
-
-![Screen](https://imgur.com/a/us8QupN)
-
 ## My process
 
 ### Built with
@@ -49,7 +44,7 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
+- Mobile responsive
 - [React](https://reactjs.org/) - JS library
 - [Axios Components](https://www.freecodecamp.org/news/how-to-use-axios-with-react/) - For API calls
 - [OpenMeteo](https://open-meteo.com/en) - Weather forecast APIs
