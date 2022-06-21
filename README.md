@@ -24,6 +24,7 @@ npm install
 ```
 npm start
 ```
+Visit with Guest browser page ;)
 
 ### The challenge
 
@@ -78,7 +79,7 @@ Here some snippet of code that help me to learn the things explained before:
           });
       }
       if (weatherData.current_weather) {            
-          if (weatherData.current_weather.weathercode) {
+          if (weatherData.current_weather.weathercode != null) {
               getCurrentWeatherData();
             }
       }
@@ -88,6 +89,7 @@ Here some snippet of code that help me to learn the things explained before:
 ### Continued development
 
 In the future I would like to handle better the hooks and to understand how React rendere the page more in depth. I had some problems related to async calls and rendering of the data. Maybe a new project similar to this where I can try differnt API call. At the moment, I had no time to invest for refactoring, I would like to work in perfomance and best practice.
+I also want to add the enter press behaviour and to improve how to favourite feature is working.
 
 ### Useful resources
 
@@ -102,4 +104,4 @@ In the future I would like to handle better the hooks and to understand how Reac
 
 ## Acknowledgments
 
-Thanks to Info-bit and Michele Lucini for the opportunity and the support
+Thanks to Alberto Germanà for the "?" 

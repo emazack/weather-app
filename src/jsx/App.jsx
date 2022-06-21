@@ -93,7 +93,7 @@ function App() {
           });
       }
       if (weatherData.current_weather) {            
-          if (weatherData.current_weather.weathercode) {
+          if (weatherData.current_weather.weathercode != null) {
               getCurrentWeatherData();
             }
       }
