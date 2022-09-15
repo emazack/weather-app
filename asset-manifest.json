@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/weather-app/static/css/main.50822d1a.css",
-    "main.js": "/weather-app/static/js/main.2b461f65.js",
-    "static/media/bg-image-sun.jpg": "/weather-app/static/media/bg-image-sun.a886c4cd214f14cfd541.jpg",
-    "static/media/bg-image-rain.jpg": "/weather-app/static/media/bg-image-rain.d53289fef8d4f2531733.jpg",
-    "static/media/bg-image-cloud.jpg": "/weather-app/static/media/bg-image-cloud.ff2fcda0c797a6b3307f.jpg",
-    "static/media/icon-sun.svg": "/weather-app/static/media/icon-sun.ca26f6e6ef60d167ef0d382f5926e2fd.svg",
-    "static/media/icon-cloudly.svg": "/weather-app/static/media/icon-cloudly.e77571eec7ae430dbb438e9fd3166c18.svg",
-    "static/media/icon-rain.svg": "/weather-app/static/media/icon-rain.5463e16a6a76bf9516e7fc8a6733e230.svg",
-    "static/media/icon-cloud.svg": "/weather-app/static/media/icon-cloud.5d237f82944b0799eff3b4d9c2e5fcdf.svg",
-    "static/media/icon-tempest.svg": "/weather-app/static/media/icon-tempest.3d5275205c0d0388ec551464724084af.svg",
-    "index.html": "/weather-app/index.html",
-    "static/media/icon-star.svg": "/weather-app/static/media/icon-star.0880776c13c93a1696fe38cc21f774c4.svg",
-    "static/media/icon-arrow-right.svg": "/weather-app/static/media/icon-arrow-right.ce781175b752408e5935316d42e3251c.svg",
-    "main.50822d1a.css.map": "/weather-app/static/css/main.50822d1a.css.map",
-    "main.2b461f65.js.map": "/weather-app/static/js/main.2b461f65.js.map"
+    "main.css": "/static/css/main.50822d1a.css",
+    "main.js": "/static/js/main.d3b4a13a.js",
+    "static/media/bg-image-sun.jpg": "/static/media/bg-image-sun.a886c4cd214f14cfd541.jpg",
+    "static/media/bg-image-rain.jpg": "/static/media/bg-image-rain.d53289fef8d4f2531733.jpg",
+    "static/media/bg-image-cloud.jpg": "/static/media/bg-image-cloud.ff2fcda0c797a6b3307f.jpg",
+    "static/media/icon-sun.svg": "/static/media/icon-sun.ca26f6e6ef60d167ef0d382f5926e2fd.svg",
+    "static/media/icon-cloudly.svg": "/static/media/icon-cloudly.e77571eec7ae430dbb438e9fd3166c18.svg",
+    "static/media/icon-rain.svg": "/static/media/icon-rain.5463e16a6a76bf9516e7fc8a6733e230.svg",
+    "static/media/icon-cloud.svg": "/static/media/icon-cloud.5d237f82944b0799eff3b4d9c2e5fcdf.svg",
+    "static/media/icon-tempest.svg": "/static/media/icon-tempest.3d5275205c0d0388ec551464724084af.svg",
+    "index.html": "/index.html",
+    "static/media/icon-star.svg": "/static/media/icon-star.0880776c13c93a1696fe38cc21f774c4.svg",
+    "static/media/icon-arrow-right.svg": "/static/media/icon-arrow-right.ce781175b752408e5935316d42e3251c.svg",
+    "main.50822d1a.css.map": "/static/css/main.50822d1a.css.map",
+    "main.d3b4a13a.js.map": "/static/js/main.d3b4a13a.js.map"
   },
   "entrypoints": [
     "static/css/main.50822d1a.css",
-    "static/js/main.2b461f65.js"
+    "static/js/main.d3b4a13a.js"
   ]
 }
