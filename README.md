@@ -99,7 +99,6 @@ I also want to add the enter press behaviour and to improve how to favourite fea
 ## Author
 
 - Linkedin - [Emanuele Zaccaria](https://www.linkedin.com/in/emazack/)
-- Twitch - [@f4giolini](https://www.twitch.tv/f4giolini?lang=it)
 
 
 ## Acknowledgments
