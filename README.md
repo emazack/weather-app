@@ -103,4 +103,4 @@ I also want to add the enter press behaviour and to improve how to favourite fea
 
 ## Acknowledgments
 
-Thanks to Alberto Germanà for the "?" 
+Thanks to Alberto Germanà to make me discover the optional operator
